@@ -29,7 +29,8 @@ go-cli-calc "(1-.5)+2*9+2"
 
 - Whitespace between numbers and operators will not affect the calculation
 - You *may* be able to omit the quotes "" if there is no white space between the numbers and operators
+- Negative numbers can't have white space E.g "2 + -2" not "2 + - 2"
 
 ## Known issues 
  
-- Can't use negative numbers `2 + -1` or `2^-2`
+- Can't do `-(2+2)`

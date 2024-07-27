@@ -14,19 +14,19 @@ const (
 )
 
 const (
-	usage string = `This program is a calcultor that follows PEMDAS
+	usage string = `This program is a calculator that follows PEMDAS
 	
 Supported Symbols: (, ), ^, *, /, +, -
 
-Usage examlpes: 
-	"4.2+18/(9-3)"
+Usage examples: 
+	go-cli-calc 2+2*2
+		OUTPUT: 6
+		
+	go-cli-calc "4.2 + 18 / (9 - 3)"
 		OUTPUT: 7.2
 
-	"4+18/(9-3)=7.2"
-		OUTPUT: TRUE
-
-NOTES
- * You only need "" if you have whitespace in your equation
+	go-cli-calc "(1-.5)+2*9+2"
+		OUTPUT: 20.5
 `
 )
 

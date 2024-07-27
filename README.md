@@ -22,7 +22,7 @@ go-cli-calc "4.2 + 18 / (9 - 3)"
 	OUTPUT: 7.2
 
 go-cli-calc "(1-.5)+2*9+2"
-	OUTPUT: 20.666666666666668
+	OUTPUT: 20.5
 ```
 
 ## NOTES

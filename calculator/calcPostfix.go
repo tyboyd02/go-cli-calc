@@ -15,6 +15,10 @@ func SolvePostfix(e []string) (float64, error) {
 		case utils.IsNumeric(value):
 			stack = append(stack, value)
 		default:
+			if len(stack) < 2 {
+				return 0, fmt.Errorf("not enough numbers to compleate expression, Operator: '%s', Stack: %v", value, stack)
+			}
+
 			lastIndex := len(stack) - 1
 
 			num1, err := strconv.ParseFloat(stack[lastIndex], 64)

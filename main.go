@@ -6,6 +6,7 @@ import (
 
 	"github.com/tyboyd02/go-cli-calc/calculator"
 	"github.com/tyboyd02/go-cli-calc/parser"
+	"github.com/tyboyd02/go-cli-calc/utils"
 )
 
 const (
@@ -54,7 +55,13 @@ func main() {
 	}
 
 	equation := args[0]
-	postfixE := parser.ConvertToReversePolishNotation(equation)
+	tokenizedEquation, err := utils.TokenizeEquation(equation)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "%sError:%s Invalid equation\n", colorRed, colorReset)
+		fmt.Fprintf(os.Stderr, "%sError:%s %v\n", colorRed, colorReset, err)
+		return
+	}
+	postfixE := parser.ConvertToReversePolishNotation(tokenizedEquation)
 	sum, err := calculator.SolvePostfix(postfixE)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "%sError:%s Invalid equation\n", colorRed, colorReset)

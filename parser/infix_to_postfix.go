@@ -35,13 +35,11 @@ func transferLastItem(src, dest *[]string) {
 	*dest = append(*dest, item)
 }
 
-func ConvertToReversePolishNotation(equation string) []string {
+func ConvertToReversePolishNotation(equation []string) []string {
 	operatorStack := []string{}
 	outputQueue := []string{}
 
-	tokens := utils.TokenizeEquation(equation)
-
-	for _, token := range tokens {
+	for _, token := range equation {
 		switch {
 		case utils.IsNumeric(token):
 			outputQueue = append(outputQueue, token)
